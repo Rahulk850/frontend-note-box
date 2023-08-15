@@ -1,0 +1,58 @@
+.about-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0 2rem 0;
+    margin: 2rem 0;
+}
+.upr-txt{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about-hading{
+font-family: 'Crimson Text', serif;
+font-size: 2.5rem;
+font-weight: 700;
+margin-bottom: 1rem;
+
+}
+.about-para{
+    font-family: 'Crimson Text', serif;
+    color: #6b726b;
+font-size: 1.4rem;
+font-weight: 400;
+margin-bottom: 1rem;
+text-align: center;
+}
+.lower-txt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+.privacy-txt{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.privacy-img{
+width: 45%;
+height: 100%;
+display: flex;
+justify-content: center;
+
+}
+.privacy-img img{
+    width: 60%;
+    height: 100%;
+    margin: auto;
+object-fit: contain;
+}
+

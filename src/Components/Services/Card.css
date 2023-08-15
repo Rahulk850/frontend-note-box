@@ -1,0 +1,44 @@
+.card-container{
+width: 80%;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+/* padding:1rem; */
+}
+.icon-container{
+    height: 5.5rem;
+    width: 5.5rem;
+    font-size: 4rem;
+    color:#418fbf ;
+    border-radius: 100%;
+    border:2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    transition: ease-in 0.3s;
+   
+}
+.icon-container:hover{
+    scale: 1.2;
+}
+.card-txt{
+    font-size: 'Crimson Text', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+}
+.title-txt{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.desc-txt{
+    font-size: 1.2rem;
+    color:#6b726b;
+}

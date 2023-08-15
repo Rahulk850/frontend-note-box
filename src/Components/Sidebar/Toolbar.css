@@ -1,0 +1,129 @@
+.tool-bar{
+    background-color:#76023c;
+    color:white;
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+    padding: 1rem;
+    position: relative;
+    z-index: 60;
+    font-size: 1.1rem;
+    /* justify-content: end; */
+    /* transition: all 0.4s; */
+}
+.logout-btn{
+    margin-left:2rem;
+    margin-right:1rem;
+    /* outline: none; */
+    /* border: none; */
+    /* border-radius: 7px;/ */
+
+
+}
+.logout-btn button{
+    padding: 0.5rem 1rem;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    /* background: none; */
+    cursor: pointer;
+    /* transition:all ease-in 0.6s; */
+}
+/* .logout-btn:hover{
+    border-radius: 7px;
+    box-shadow:3px 3px  #2c2727;
+} */
+.user-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 1.7rem;
+    margin-left: 75%;
+    /* border: 2px solid whitesmoke; */
+}
+.user-name-text{
+    color: white;
+    text-transform: capitalize;
+
+}
+
+.sidebar{
+    background-color: #515861;
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: all 0.4s;
+    z-index: 100;
+    overflow-y: auto;
+}
+.sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+.sidebar--open{
+    transform: translateX(0%);
+}
+
+.sidebar li{
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-bottom:  solid black 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+.sidebar li:hover{
+    background-color: #353a42;
+    /* color:red; */
+    transition: ease-in 0.5s;
+}
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+.backdrop--open{
+    display: block;
+}
+.notes-list{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.notes-list-title{
+text-transform: capitalize;
+font-size: 1rem;
+ overflow: hidden;
+ width: 75%;
+ word-wrap: break-word;
+}
+.notes-list-icon{
+    color:white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.deleteIcon{
+    font-size: 1.1rem;
+}
+.deleteIcon:hover{
+    scale: 1.2;
+    color: red;
+
+}
+.newEntry:hover{
+    scale: 1.2;
+    color:blue;
+
+}

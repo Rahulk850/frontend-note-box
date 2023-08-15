@@ -1,0 +1,15 @@
+.home-btn-container{
+width: 100%;
+display: flex;
+/* align-items: center; */
+/* flex-direction: row; */
+justify-content: end;
+
+}
+.home-btn{
+    color: blue;
+    outline: none;
+    /* border: none; */
+    border:1px ;
+    font-weight:rem;
+}
