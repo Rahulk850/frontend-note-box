@@ -16,7 +16,8 @@ const NotesState = (props) => {
   //         })
   //     }, 4000);
   //   }
-  const host = "http://localhost:5001";
+  const host = "https://note-box.onrender.com";
+  // const host = "http://localhost:5001";
   const initialnotes = [];
   const [notes, setNotes] = useState([]);
   const [note, setNote] = useState({ title: "", description: "", tag: "" });
