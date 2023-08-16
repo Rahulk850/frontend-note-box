@@ -5,21 +5,37 @@ import { json, useNavigate } from "react-router-dom";
 import { Navbar } from "../Navbar/Navbar";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { Loader2 } from "./Loader2";
+import { Loader } from "../Loader/Loader";
+import { createRenderer } from "react-dom/test-utils";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const Loginform = () => {
   const navigate = useNavigate();
   const context = useContext(logContext);
-  const { userLogin, login, setLogin, authToken, succes, setSucces, fetchAll } =
+  const { userLogin, login, setLogin, authToken, succes, setSucces, fetchAll , loading,setLoading} =
     context;
+    // const[redirect , setRedirect] = useState(fale);
 
-  useEffect(() => {
-    console.log("inside useefeect");
+    const showToastMessage = () => {
+      toast.error('Wrong credentials !', {
+          position: toast.POSITION.TOP_CENTER
+      });}
+
+    useEffect(() => {
+    // console.log("inside useefeect");
     if (localStorage.getItem("auth-token")) {
-      userLogin(login);
+      // userLogin(login);
       navigate("/allnotes");
       fetchAll();
-      // console.log('auth-token')
     }
+    // else{
+    //   setLoading(false);
+    //   console.log("wrong credentials");
+    //   showToastMessage();
+    // }
+    // setLoading(false);
   }, [localStorage.length]);
 
   const onChange = (e) => {
@@ -30,20 +46,23 @@ export const Loginform = () => {
   const Login = (e) => {
     e.preventDefault();
     userLogin(login);
-    // console.log(localStorage.getItem("auth-token"));
-    console.log(succes);
-    if (succes === true) {
-      setTimeout(() => {
-        navigate("/allnotes");
-        fetchAll();
-        // console.log("inside settimeout");
-        // console.log(localStorage.getItem("auth-token"));
-      }, 5000);
+    // console.log(succes);
+    // if (succes === true) {
+    //     setTimeout(() => {
+    //     navigate("/allnotes");
+    //     fetchAll();
+    //     // showToastMessage();
+    //   }, 5000);
     }
+    // else{
+      // console.log("wrong credentials");
+      // setLoading(false);
+      // showToastMessage();
+    // }
+    // console.log("outside settimeout");
+  //   setSucces(false);
+  // };
 
-    console.log("outside settimeout");
-    setSucces(false);
-  };
   const homeCome = () => {
     navigate("/");
   };
@@ -54,8 +73,13 @@ export const Loginform = () => {
   return (
     <>
       {/* <Navbar/> */}
-     
+
       <div className="form-container">
+      <div className="loader-2">
+
+         {/* <Loader2/> */}
+       { loading && <Loader/>}
+        </div>
         <div className="close-btn-container">
           <AiOutlineCloseCircle className="close-btn" onClick={homeCome} />
         </div>

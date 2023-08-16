@@ -4,7 +4,9 @@ import { About } from "./About/About";
 import { Services } from "./Services/Services";
 import { Navbar } from "./Navbar/Navbar";
 
+
 const HomePage = () => {
+
   return (
     <div>
       <Navbar/>

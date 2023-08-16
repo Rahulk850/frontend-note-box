@@ -3,12 +3,13 @@ import "./Signupform.css";
 import notesContext from "../../Context/notes/NotesContext";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { Loader } from "../Loader/Loader";
 
 
 export const Signupform = () => {
 
   const context = useContext(notesContext);
-  const {succes,setSucces, sign, setSign, userSignup } = context;
+  const {succes,setSucces, sign, setSign, userSignup , loading } = context;
   const navigate = useNavigate()
   useEffect(() => {
     if (localStorage.getItem("auth-token")) {
@@ -49,6 +50,9 @@ export const Signupform = () => {
     <div className="form-container">
       <div className="close-btn-container">
           <AiOutlineCloseCircle className="close-btn" onClick={homeCome}/>
+        </div><div className="loader-2">
+
+        { loading && <Loader/>}
         </div>
       <div className="login-form-container">
         <form className="login-form" action="">

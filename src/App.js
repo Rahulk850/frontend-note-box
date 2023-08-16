@@ -17,10 +17,23 @@ import HomePage from "./Components/HomePage";
 import NotesSpace from "./Components/Notespage/NotesSpace";
 import NotesState from "./Context/notes/NotesState";
 import notesContext from "./Context/notes/NotesContext";
+// import { ToastContainer, toast } from 'react-toastify';
+// import React from "react";
+// import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
+  // const showToastMessage = () => {
+  //   toast.error('error Notification !', {
+  //       position: toast.POSITION.TOP_CENTER
+  //   });}
+
+  // const notify = () => toast("Wow so easy!");
   return (
     <>
+    {/* <button onClick={showToastMessage}>
+       this is toastify button
+       <ToastContainer/>
+      </button> */}
       <NotesState>
         <BrowserRouter>
           {/* <Navbar/> */}

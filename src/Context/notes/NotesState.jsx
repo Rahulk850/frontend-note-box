@@ -34,6 +34,7 @@ const NotesState = (props) => {
   /// SIGNUP <==> creatign a new user ////////////////////////
   const userSignup = async ({name,email,password }) => {
     console.log("userSignup running.....");
+    setLoading(true);
     const url = `${host}/api/auth/createuser`;
     const response = await fetch(url, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -50,12 +51,14 @@ const NotesState = (props) => {
       setSucces(true);
     }
     console.log(succes);
+    setLoading(false);
   };
 
 
   // Login //////////////////////////////
   const userLogin = async ({ email, password }) => {
     console.log("userLogin running.....");
+    setLoading(true);
     const url = `${host}/api/auth/login`;
     const response = await fetch(url, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -66,20 +69,24 @@ const NotesState = (props) => {
     });
     const json = await response.json();
 
-    console.log(json.success);
+    // console.log(json.success);
+    // console.log(json.errors);
     if(json.success === true){
       localStorage.setItem("auth-token", json.authtoken);
     };
 
+    setSucces(json.success);
     setTimeout(() => {
-      setSucces(json.success);
-      console.log(succes);
-    }, 5000);
+      console.log("inside "+succes);
+      console.log(json.message);
+      console.log(json.error);
+    }, 2000);
     // if (json.success===true) {
     //   console.log('inside')
     //   setSucces(json.success);
     // }
-    console.log(succes);//success
+    console.log("outside "+succes);
+    setLoading(false);//success
   };
   /////////////////getuserdetails////////////
   const getUser = async () => {
