@@ -1,24 +1,11 @@
-import { json, useNavigate } from "react-router-dom";
+import { useBeforeUnload } from "react-router-dom";
 import NotesContext from "./NotesContext";
-import { forwardRef, useEffect, useState } from "react";
+import {  useState } from "react";
 
 const NotesState = (props) => {
-  //   const s1 ={
-  //    name:"Rahul kumar",
-  //    "class":"first class"
-  //   }
-  //   const[state ,setState] = useState(s1);
-  //   const  update=()=>{
-  //     setTimeout(() => {
-  //         setState({
-  //             "name":"Trilok",
-  //             "class":"second class"
-  //         })
-  //     }, 4000);
-  //   }
+
   const host = "https://note-box.onrender.com";
-  // const host = "http://localhost:5001";
-  const initialnotes = [];
+  // const initialnotes = [];
   const [notes, setNotes] = useState([]);
   const [note, setNote] = useState({ title: "", description: "", tag: "" });
   const [id, setId] = useState();
@@ -27,8 +14,9 @@ const NotesState = (props) => {
   const [sign, setSign] = useState({name:"",email:"",password:""});
   const initailuser = { name:"", email:""};
   const [user1, setUser1] = useState(initailuser);
+  const [auth , setAuth] = useState(false);
 
-  const [succes, setSucces] = useState(false);
+  const [succes, setSucces] = useState(null);
 
 
   /// SIGNUP <==> creatign a new user ////////////////////////
@@ -45,6 +33,8 @@ const NotesState = (props) => {
     });
     const json = await response.json();
     //  setLogin(json);
+    setAuth(json.authtoken);
+
     console.log(json);
     if (json.success) {
       localStorage.setItem("auth-token", json.authtoken);
@@ -68,7 +58,7 @@ const NotesState = (props) => {
       body: JSON.stringify({ email, password }),
     });
     const json = await response.json();
-
+    setAuth(json.authtoken);
     // console.log(json.success);
     // console.log(json.errors);
     if(json.success === true){
@@ -253,8 +243,9 @@ const NotesState = (props) => {
         setSign,
         getUser,
         user1,
-        setUser1
-
+        setUser1,
+        auth,
+        setAuth
       }}
     >
       {props.children}

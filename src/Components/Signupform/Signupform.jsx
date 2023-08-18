@@ -1,16 +1,14 @@
-import React, { useState,useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import "./Signupform.css";
 import notesContext from "../../Context/notes/NotesContext";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { Loader } from "../Loader/Loader";
 
-
 export const Signupform = () => {
-
   const context = useContext(notesContext);
-  const {succes,setSucces, sign, setSign, userSignup , loading } = context;
-  const navigate = useNavigate()
+  const { succes, setSucces, sign, setSign, userSignup, loading } = context;
+  const navigate = useNavigate();
   useEffect(() => {
     if (localStorage.getItem("auth-token")) {
       userSignup(sign);
@@ -40,20 +38,18 @@ export const Signupform = () => {
     console.log("outside settimeout");
     setSucces(false);
   };
-   const  homeCome=()=>{
-    navigate('/');
-   }
-   const  login1=()=>{
-    navigate('/login');
-   }
+  const homeCome = () => {
+    navigate("/");
+  };
+  const login1 = () => {
+    navigate("/login");
+  };
   return (
     <div className="form-container">
       <div className="close-btn-container">
-          <AiOutlineCloseCircle className="close-btn" onClick={homeCome}/>
-        </div><div className="loader-2">
-
-        { loading && <Loader/>}
-        </div>
+        <AiOutlineCloseCircle className="close-btn" onClick={homeCome} />
+      </div>
+      <div className="loader-2">{loading && <Loader />}</div>
       <div className="login-form-container">
         <form className="login-form" action="">
           <h2>Signup</h2>
@@ -91,16 +87,18 @@ export const Signupform = () => {
             <label htmlFor="password">Password</label>
           </div>
           <div className="logform-btn-container">
-            <button className="loginform-btn" type="submit"
-            onClick={(e) => Signup(e)}
+            <button
+              className="loginform-btn"
+              type="submit"
+              onClick={(e) => Signup(e)}
             >
               Signup
             </button>
           </div>
           <div className="home-btn-container">
-          <button className="home-btn"
-          onClick={login1}
-          >LogIn</button>
+            <button className="home-btn" onClick={login1}>
+              LogIn
+            </button>
           </div>
         </form>
       </div>

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./Notespage.css";
 import { BsPen } from "react-icons/bs";
 import Toolbar from "../Sidebar/Toolbar";
@@ -7,16 +7,11 @@ import notesContext from "../../Context/notes/NotesContext";
 export const Notespage = ({ sidebar, openSidebar }) => {
   const context = useContext(notesContext);
   const {
-    notes,
-    addNote,
     updateNote,
     note,
     setNote,
     id,
-    setId,
-    fetchAll,
-    setLoading,
-    loading,
+    loading
   } = context;
 
   const onChange = (e) => {

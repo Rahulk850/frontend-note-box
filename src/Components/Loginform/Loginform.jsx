@@ -1,12 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "./Loginform.css";
 import logContext from "../../Context/notes/NotesContext";
-import { json, useNavigate } from "react-router-dom";
-import { Navbar } from "../Navbar/Navbar";
+import {  redirect, useNavigate } from "react-router-dom";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { Loader2 } from "./Loader2";
 import { Loader } from "../Loader/Loader";
-import { createRenderer } from "react-dom/test-utils";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -14,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export const Loginform = () => {
   const navigate = useNavigate();
   const context = useContext(logContext);
-  const { userLogin, login, setLogin, authToken, succes, setSucces, fetchAll , loading,setLoading} =
+  const { userLogin, login, setLogin, fetchAll , loading,} =
     context;
     // const[redirect , setRedirect] = useState(fale);
 
@@ -70,6 +67,8 @@ export const Loginform = () => {
     navigate("/signup");
   };
 
+  console.log('loader login page ', loading)
+
   return (
     <>
       {/* <Navbar/> */}
@@ -79,6 +78,7 @@ export const Loginform = () => {
 
          {/* <Loader2/> */}
        { loading && <Loader/>}
+       {/* { loading && 'loading....'} */}
         </div>
         <div className="close-btn-container">
           <AiOutlineCloseCircle className="close-btn" onClick={homeCome} />
