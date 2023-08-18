@@ -1,7 +1,7 @@
 import "./App.css";
 import { Loginform } from "./Components/Loginform/Loginform";
 import { Signupform } from "./Components/Signupform/Signupform";
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import HomePage from "./Components/HomePage";
 import NotesSpace from "./Components/Notespage/NotesSpace";
@@ -30,7 +30,7 @@ function App() {
        <ToastContainer/>
       </button> */}
       <NotesState>
-        <BrowserRouter>
+        <HashRouter>
           {/* <Navbar/> */}
           {/* <NotesSpace /> */}
           {/* <Loginform/> */}
@@ -45,7 +45,7 @@ function App() {
 
           {/* <Loginform/> */}
           {/* <Signupform/> */}
-        </BrowserRouter>
+        </HashRouter>
       </NotesState>
     </>
   );
