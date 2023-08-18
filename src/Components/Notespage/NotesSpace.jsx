@@ -15,7 +15,7 @@ export default function NotesSpace() {
     setSidebar((prevState) => !prevState);
   };
 
-  // if(!localStorage.getItem('auth-token')) navigate('/login')
+  if(!localStorage.getItem('auth-token')) navigate('/login')
   return (
     <div>
       {/* <Loader/> */}
