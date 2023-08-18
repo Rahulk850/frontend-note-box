@@ -30,7 +30,7 @@ function App() {
        <ToastContainer/>
       </button> */}
       <NotesState>
-        <BrowserRouter>
+        <HashRouter>
           {/* <Navbar/> */}
           {/* <NotesSpace /> */}
           {/* <Loginform/> */}
@@ -45,7 +45,7 @@ function App() {
 
           {/* <Loginform/> */}
           {/* <Signupform/> */}
-        </BrowserRouter>
+        </HashRouter>
       </NotesState>
     </>
   );
