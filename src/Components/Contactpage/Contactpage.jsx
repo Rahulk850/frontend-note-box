@@ -11,21 +11,7 @@ export const Contactpage = () => {
     const form = useRef();
 
 
-    const sendEmail = (e) => {
-        e.preventDefault();
-        console.log(load);
-        emailjs.sendForm('service_mi4z547', 'template_bj7u9du', form.current, 'ySB5uyJKSuwWAOFUs')
-        .then((result) => {
-          console.log(result.text);
-          setLoad(false);
-        }, (error) => {
-          console.log(error.text);
-          setLoad(false);
-        });
-
-        console.log(load);
-      };
-
+    
       const handleSubmit=async(e)=>{
         e.preventDefault();
         setLoad(true);
