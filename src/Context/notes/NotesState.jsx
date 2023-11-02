@@ -1,10 +1,12 @@
-import { useBeforeUnload } from "react-router-dom";
+// import { useBeforeUnload } from "react-router-dom";
 import NotesContext from "./NotesContext";
 import {  useState } from "react";
+import { useEffect } from "react";
+import { useRef } from "react";
 
 const NotesState = (props) => {
 
-  const host = "https://note-box.onrender.com";
+  const host = "http://localhost:5001";
   // const initialnotes = [];
   const [notes, setNotes] = useState([]);
   const [note, setNote] = useState({ title: "", description: "", tag: "" });
@@ -17,11 +19,16 @@ const NotesState = (props) => {
   const [auth , setAuth] = useState(false);
 
   const [succes, setSucces] = useState(null);
+  const [message, setMessage] = useState({message:""});
+
+  const errorValue = useRef(null);
+
+  const successValue = useRef("");
+
 
 
   /// SIGNUP <==> creatign a new user ////////////////////////
   const userSignup = async ({name,email,password }) => {
-    console.log("userSignup running.....");
     setLoading(true);
     const url = `${host}/api/auth/createuser`;
     const response = await fetch(url, {
@@ -32,15 +39,28 @@ const NotesState = (props) => {
       body: JSON.stringify({name,email,password}),
     });
     const json = await response.json();
-    //  setLogin(json);
+
+
     setAuth(json.authtoken);
 
-    console.log(json);
     if (json.success) {
       localStorage.setItem("auth-token", json.authtoken);
       setSucces(true);
+      successValue.current = true;
+      // console.log("success true");
     }
-    console.log(succes);
+    console.log(json.success);
+
+
+    if (!json.success){
+         setSucces(json.success);
+         successValue.current = false;
+         errorValue.current= json.errors[0]['msg'];
+         console.log("yerror",errorValue.current);
+        console.log("in state",successValue);
+
+    }
+    // console.log(succes);
     setLoading(false);
   };
 
@@ -66,9 +86,11 @@ const NotesState = (props) => {
     };
 
     setSucces(json.success);
+    // console.log(json.message);
+    setMessage(json.message);
     setTimeout(() => {
+      // console.log(message);
       console.log("inside "+succes);
-      console.log(json.message);
       console.log(json.error);
     }, 2000);
     // if (json.success===true) {
@@ -78,6 +100,8 @@ const NotesState = (props) => {
     console.log("outside "+succes);
     setLoading(false);//success
   };
+
+
   /////////////////getuserdetails////////////
   const getUser = async () => {
     console.log("getuser is running.....");
@@ -245,7 +269,10 @@ const NotesState = (props) => {
         user1,
         setUser1,
         auth,
-        setAuth
+        setAuth,
+        message,
+        successValue,
+        errorValue
       }}
     >
       {props.children}

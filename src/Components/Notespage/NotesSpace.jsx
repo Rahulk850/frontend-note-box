@@ -12,7 +12,7 @@ export default function NotesSpace() {
   // const context = useContext(notesContext);
   const context = useContext(notesContext);
   const {auth ,setAuth} = context;
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [sidebar, setSidebar] = useState(false);
 
   const toggleSidebar = () => {

@@ -3,6 +3,7 @@ import { Hero } from "./Hero/Hero";
 import { About } from "./About/About";
 import { Services } from "./Services/Services";
 import { Navbar } from "./Navbar/Navbar";
+import { Contact } from "./Contact/Contact";
 
 
 const HomePage = () => {
@@ -12,7 +13,8 @@ const HomePage = () => {
       <Navbar/>
       <Hero />
       <About />
-      <Services />
+      <Services/>
+      <Contact/>
     </div>
   );
 };

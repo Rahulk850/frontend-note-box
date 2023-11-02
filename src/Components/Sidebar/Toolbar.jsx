@@ -6,7 +6,7 @@ import notesContext from '../../Context/notes/NotesContext';
 
 export default function Toolbar({openSidebar}) {
   const context = useContext(notesContext);
-  const {getUser,user1 , setAuth} = context;
+  const {getUser,user1 , setAuth, setNote , setUser1} = context;
 
 
 
@@ -20,6 +20,8 @@ export default function Toolbar({openSidebar}) {
   let hadleLogout=()=>{
     localStorage.removeItem('auth-token');
     setAuth(null);
+    setNote({ title: "", description: "", tag: "" });
+    setUser1({ name:"", email:""});
     navigate('/login');
   }
 

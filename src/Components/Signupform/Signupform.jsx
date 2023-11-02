@@ -4,11 +4,22 @@ import notesContext from "../../Context/notes/NotesContext";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { Loader } from "../Loader/Loader";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Signupform = () => {
   const context = useContext(notesContext);
-  const { succes, setSucces, sign, setSign, userSignup, loading } = context;
+
+  const { succes, setSucces, sign, setSign, userSignup,successValue,errorValue, loading } = context;
+
+    const showToastMessage = () => {
+    toast.error(errorValue.current  , {
+        position: toast.POSITION.TOP_CENTER
+    });}
+
+
   const navigate = useNavigate();
+
   useEffect(() => {
     if (localStorage.getItem("auth-token")) {
       userSignup(sign);
@@ -18,25 +29,32 @@ export const Signupform = () => {
     }
   }, [localStorage.length]);
 
+
+
+
   const onChange = (e) => {
     console.log("called", e.target.name, e.target.value);
     setSign({ ...sign, [e.target.name]: e.target.value });
   };
 
-  const Signup = (e) => {
+  const Signup = async(e) => {
     e.preventDefault();
-    userSignup(sign);
-    console.log(localStorage.getItem("auth-token"));
-    console.log(succes);
-    if (succes) {
+    const si = await userSignup(sign);
+    // console.log(localStorage.getItem("auth-token"));
+    console.log("signuuup page",successValue.current);
+    if (successValue.current === true) {
       setTimeout(() => {
         console.log("inside settimeout");
         navigate("/allnotes");
-        console.log(localStorage.getItem("auth-token"));
+        // console.log(localStorage.getItem("auth-token"));
       }, 5000);
-    }
-    console.log("outside settimeout");
-    setSucces(false);
+}else if(successValue.current === false && errorValue.current.length >0){
+      showToastMessage();
+      console.log(errorValue.current);
+      console.log("inside successValue === false");
+
+      }
+      setSucces(false);
   };
   const homeCome = () => {
     navigate("/");
@@ -45,6 +63,8 @@ export const Signupform = () => {
     navigate("/login");
   };
   return (
+    <>
+      <ToastContainer/>
     <div className="form-container">
       <div className="close-btn-container">
         <AiOutlineCloseCircle className="close-btn" onClick={homeCome} />
@@ -103,5 +123,6 @@ export const Signupform = () => {
         </form>
       </div>
     </div>
+  </>
   );
 };

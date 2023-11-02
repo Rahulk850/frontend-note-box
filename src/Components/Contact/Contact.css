@@ -1,0 +1,113 @@
+.contact{
+    background-color:#13274F;
+    color: white;
+
+}
+.contact-upper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* margin: 2rem; */
+    /* padding: 2rem; */
+    /* justify-content: center; */
+
+}
+.contact-upper h1{
+    color: white;
+}
+.contact-upper span{
+    color:yellow;
+}
+.upper-left{
+    width: 50%;
+    height: 100%;
+ margin-left: 7.5rem;
+ padding: 2rem;
+}
+.upper-left h1{
+
+ margin:1rem;
+ padding: 1rem;
+}
+.upper-left li{
+    color: white;
+    margin-left: 2rem;
+    /* padding:0.2rem 0.5rem 0.5rem 0.5rem ; */
+    cursor: pointer;
+}
+.upper-right{
+    width: 50%;
+    margin-left: 1rem;
+    padding: 2rem;
+
+}
+.upper-right-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.upper-right-content-header1{
+    font-size: 1.3rem;
+    margin: 1rem;
+}
+.form-subs-container{
+
+    width: 70%;
+}
+.form-content{
+    /* width: 80%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-email{
+    width: 100%;
+    height: 2.3rem;
+    outline: none;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    padding: 0 1rem;
+
+    display: inline-block;
+    box-sizing: border-box;
+
+    background-color:rgb(221, 221, 59);
+}
+.contact-icon{
+    margin-left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    transition: all ease-in 0.2s;
+}
+.contact-icon:hover{
+    scale: 1.2;
+    color: yellow;
+}
+.footer{
+    width: 100%;
+    /* position: fixed; */
+   left: 0;
+   bottom: 0;
+    text-align: center;
+    background-color: #13274F;
+}
+
+.follow-container{
+    display: flex;
+    /* margin-left: 1rem; */
+    /* justify-content: center; */
+
+}
+.footer-icons{
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all ease-in 0.2s;
+}
+.footer-icons:hover{
+ scale: 1.2;
+ color: yellow;
+}

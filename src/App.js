@@ -7,6 +7,7 @@ import HomePage from "./Components/HomePage";
 import NotesSpace from "./Components/Notespage/NotesSpace";
 import NotesState from "./Context/notes/NotesState";
 import { Protected } from "./Components/Protected/Protected";
+import { Contactpage } from "./Components/Contactpage/Contactpage";
 
 
 // import { useNavigate } from "react-router-dom";
@@ -36,6 +37,7 @@ function App() {
           {/* <Loginform/> */}
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/contact" element={<Contactpage/>} />
             <Route path="/login" element={<Loginform/>} />
             <Route path="/signup" element={<Signupform />} />
             <Route path="/allnotes" element= {<Protected/>}>

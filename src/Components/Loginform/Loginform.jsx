@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export const Loginform = () => {
   const navigate = useNavigate();
   const context = useContext(logContext);
-  const { userLogin, login, setLogin, fetchAll , loading,} =
+  const { userLogin, login, setLogin, fetchAll , loading,setLoading ,getUser , message} =
     context;
     // const[redirect , setRedirect] = useState(fale);
 
@@ -24,8 +24,15 @@ export const Loginform = () => {
     // console.log("inside useefeect");
     if (localStorage.getItem("auth-token")) {
       // userLogin(login);
-      navigate("/allnotes");
+      getUser();
       fetchAll();
+
+      setLoading(true);
+      setTimeout(() => {
+        navigate("/allnotes");
+        setLoading(false);
+
+      }, 1000);
     }
     // else{
     //   setLoading(false);
@@ -43,6 +50,7 @@ export const Loginform = () => {
   const Login = (e) => {
     e.preventDefault();
     userLogin(login);
+    console.log(message);
     // console.log(succes);
     // if (succes === true) {
     //     setTimeout(() => {
