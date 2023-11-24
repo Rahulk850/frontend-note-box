@@ -6,7 +6,7 @@ import { useRef } from "react";
 
 const NotesState = (props) => {
 
-  const host = "http://localhost:5001";
+  const host = "https://note-box.onrender.com";
   // const initialnotes = [];
   const [notes, setNotes] = useState([]);
   const [note, setNote] = useState({ title: "", description: "", tag: "" });
