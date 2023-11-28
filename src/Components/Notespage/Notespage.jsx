@@ -24,7 +24,7 @@ export const Notespage = ({ sidebar, openSidebar }) => {
     // console.log(note)
     // fetchAll();
     // setLoading(false)
-    console.log(note);
+    // console.log(note);
   };
   return (
     <div

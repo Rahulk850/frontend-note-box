@@ -1,5 +1,5 @@
 {
-    "files.autoSave": "afterDelay",
+    "files.autoSave": "off",
     "workbench.colorTheme": "Nanowise Dark",
     // The Cursive font is operator Mono, it's $200 and you need to buy it to get the cursive. Dank Mono or Victor Mono are good alternatives
     "editor.fontFamily": "Operator Mono, Menlo, Monaco, 'Courier New', monospace",

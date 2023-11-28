@@ -6,7 +6,8 @@ import { useRef } from "react";
 
 const NotesState = (props) => {
 
-  const host = "https://note-box.onrender.com";
+  // const host = "https://note-box.onrender.com";
+  const host = "http://localhost:5001";
   // const initialnotes = [];
   const [notes, setNotes] = useState([]);
   const [note, setNote] = useState({ title: "", description: "", tag: "" });
@@ -99,6 +100,7 @@ const NotesState = (props) => {
     // }
     console.log("outside "+succes);
     setLoading(false);//success
+    console.log(loading);
   };
 
 

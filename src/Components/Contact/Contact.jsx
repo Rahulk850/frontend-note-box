@@ -3,6 +3,7 @@ import "./Contact.css";
 import { TbMailForward } from "react-icons/tb";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { PiTwitterLogoLight , PiFacebookLogo ,PiLinkedinLogoLight} from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 export const Contact = () => {
   return (
@@ -14,9 +15,15 @@ export const Contact = () => {
               NOTE-<span>BOX</span>
             </h1>
 
-            <li>Report An Issue</li>
-            <li>Support Us</li>
-            <li>Suggestion Box</li>
+            <li><Link to = "/contact">
+            Report An Issue
+            </Link>
+            </li>
+            <li><Link to = "/contact">
+            Suggestion Box
+            </Link>
+            </li>
+
 
             <div className="follow-container">
                 <div className="insta footer-icons">

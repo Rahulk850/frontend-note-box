@@ -82,12 +82,12 @@ export const Loginform = () => {
       {/* <Navbar/> */}
 
       <div className="form-container">
-      <div className="loader-2">
-
-         {/* <Loader2/> */}
+      {/* <div className="loader-2"> */}
        { loading && <Loader/>}
        {/* { loading && 'loading....'} */}
-        </div>
+        {/* </div> */}
+
+         {/* <Loader2/> */}
         <div className="close-btn-container">
           <AiOutlineCloseCircle className="close-btn" onClick={homeCome} />
         </div>

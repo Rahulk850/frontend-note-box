@@ -65,11 +65,11 @@ export const Signupform = () => {
   return (
     <>
       <ToastContainer/>
+      <div className="loader-2">{loading && <Loader />}</div>
     <div className="form-container">
       <div className="close-btn-container">
         <AiOutlineCloseCircle className="close-btn" onClick={homeCome} />
       </div>
-      <div className="loader-2">{loading && <Loader />}</div>
       <div className="login-form-container">
         <form className="login-form" action="">
           <h2>Signup</h2>

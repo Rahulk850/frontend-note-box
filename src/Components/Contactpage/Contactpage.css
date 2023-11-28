@@ -161,7 +161,7 @@ line-height: 1.5rem; /* 150% */
 letter-spacing: -0.03rem;
 text-transform: uppercase;
 }
-.loader {
+.contact-loader {
     width: 35px;
     height: 35px;
     border: 3px solid #FFF;
@@ -171,7 +171,7 @@ text-transform: uppercase;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
   }
-  .loader::after {
+  .contact-loader::after {
     content: '';
     box-sizing: border-box;
     position: absolute;

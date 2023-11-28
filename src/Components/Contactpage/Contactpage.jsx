@@ -11,7 +11,7 @@ export const Contactpage = () => {
     const form = useRef();
 
 
-    
+
       const handleSubmit=async(e)=>{
         e.preventDefault();
         setLoad(true);
@@ -107,7 +107,7 @@ export const Contactpage = () => {
                 </div>
                 <div className="submit-btn-container" >
                   <div className="submit-btn" onClick={(e) => handleSubmit(e)}>
-                 {  load && <span className="loader"></span>}
+                 {  load && <span className="contact-loader"></span>}
                      Submit Now
                     {/* <img src={} alt="" /> */}
                   </div>

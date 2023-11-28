@@ -32,7 +32,7 @@ export const Navbar = () => {
         <li><HashLink smooth to="/#home">HOME</HashLink></li>
         <li><HashLink smooth to="/#about">ABOUT</HashLink></li>
         <li><HashLink smooth to="/#services">SERVICES</HashLink></li>
-        <li><Link smooth to="/contact">CONTACT</Link></li>
+        <li><HashLink smooth to="/#contact">CONTACT</HashLink></li>
       </div>
       <div className="login-signup">
         <button className="login"><Link to="/login">LOGIN</Link></button>

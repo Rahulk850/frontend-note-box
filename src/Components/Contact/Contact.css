@@ -2,6 +2,7 @@
     background-color:#13274F;
     color: white;
 
+
 }
 .contact-upper{
     display: flex;
@@ -29,7 +30,7 @@
  margin:1rem;
  padding: 1rem;
 }
-.upper-left li{
+.upper-left li, .upper-left li a{
     color: white;
     margin-left: 2rem;
     /* padding:0.2rem 0.5rem 0.5rem 0.5rem ; */
